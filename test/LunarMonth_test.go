@@ -28,7 +28,7 @@ func TestLunarMonth1(t *testing.T) {
 		t.Errorf("excepted: %v, got: %v", excepted, got)
 	}
 
-	excepted1 := "丙辰"
+	excepted1 := "乙卯"
 	got1 := month.GetGanZhi()
 	if excepted1 != got1 {
 		t.Errorf("excepted: %v, got: %v", excepted1, got1)
@@ -43,7 +43,7 @@ func TestLunarMonth2(t *testing.T) {
 		t.Errorf("excepted: %v, got: %v", excepted, got)
 	}
 
-	excepted1 := "丁巳"
+	excepted1 := "丙辰"
 	got1 := month.GetGanZhi()
 	if excepted1 != got1 {
 		t.Errorf("excepted: %v, got: %v", excepted1, got1)
@@ -73,7 +73,7 @@ func TestLunarMonth4(t *testing.T) {
 		t.Errorf("excepted: %v, got: %v", excepted, got)
 	}
 
-	excepted1 := "丙寅"
+	excepted1 := "乙丑"
 	got1 := month.GetGanZhi()
 	if excepted1 != got1 {
 		t.Errorf("excepted: %v, got: %v", excepted1, got1)

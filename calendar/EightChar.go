@@ -333,13 +333,10 @@ func (eightChar *EightChar) GetShenGong() string {
 		}
 	}
 	offset := monthZhiIndex + timeZhiIndex
-	for {
-		if offset <= 12 {
-			break
-		}
+	if offset > 12 {
 		offset -= 12
 	}
-	ganIndex := (eightChar.GetLunar().GetYearGanIndexExact()+1)*2 + (offset % 12)
+	ganIndex := (eightChar.GetLunar().GetYearGanIndexExact()+1)*2 + offset
 	for {
 		if ganIndex <= 10 {
 			break

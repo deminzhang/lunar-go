@@ -22,7 +22,11 @@ func NewLunarMonth(lunarYear int, lunarMonth int, dayCount int, firstJulianDay f
 	month.dayCount = dayCount
 	month.firstJulianDay = firstJulianDay
 	month.index = index
-	month.zhiIndex = (index - 1 + LunarUtil.BASE_MONTH_ZHI_INDEX) % 12
+	m := lunarMonth
+	if m < 0 {
+		m = -m
+	}
+	month.zhiIndex = (m - 1 + LunarUtil.BASE_MONTH_ZHI_INDEX) % 12
 	return month
 }
 
@@ -72,7 +76,11 @@ func (lunarMonth *LunarMonth) GetGanZhi() string {
 
 func (lunarMonth *LunarMonth) GetGanIndex() int {
 	offset := (NewLunarYear(lunarMonth.year).GetGanIndex() + 1) % 5 * 2
-	return (lunarMonth.index - 1 + offset) % 10
+	m := lunarMonth.month
+	if m < 0 {
+		m = -m
+	}
+	return (m - 1 + offset) % 10
 }
 
 func (lunarMonth *LunarMonth) GetPositionXi() string {
